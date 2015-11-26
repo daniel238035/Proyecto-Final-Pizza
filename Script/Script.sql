@@ -1,67 +1,104 @@
-﻿create table tb_cliente
+﻿create table tb_usuario
+( 
+	tb_usuario_id serial not null,
+	tb_usuario_cod character(4) not null,
+	tb_usuario_apepat character varying(50) not null,
+	tb_usuario_apemat character varying(50) not null,
+	tb_usuario_nom character varying(50) not null,
+	tb_usuario_corele character varying(50) not null,
+	tb_usuario_usenam character varying(50) not null,
+	tb_usuario_pas character varying(50) not null,
+	constraint pk_usuario primary key(tb_usuario_id),
+	constraint unq_usuario_cod unique(tb_usuario_cod),
+	constraint unq_usuario_apepatapematnom unique(tb_usuario_apepat,tb_usuario_apemat,tb_usuario_nom),
+	constraint unq_usuario_corele unique(tb_usuario_corele),
+	constraint unq_usuario_usenampas unique(tb_usuario_usenam,tb_usuario_pas),
+	constraint chk_usuario_id check(tb_usuario_id > 0),
+	constraint chk_usuario_cod check(tb_usuario_cod similar to '[0-9][0-9][0-9][0-9]')
+);
+
+create table tb_acceso
 (
-	tb_cliente_id serial not null,
-	tb_cliente_cod character(2) not null,
-	tb_cliente_nom character varying(50) not null,
-	constraint pk_cliente primary key(tb_cliente_id),
-	constraint unq_cliente_cod unique(tb_cliente_cod),
-	constraint unq_cliente_nom unique(tb_cliente_nom),
-	constraint chk_cliente_id check(tb_cliente_id > 0),
-	constraint chk_cliente_cod check(tb_cliente_cod similar to '[0-9][0-9]')
+	tb_acceso_id serial not null,
+	tb_acceso_fecini date not null,
+	tb_acceso_fecter date not null,
+	tb_acceso_rol character(1) not null, -- Puede ser: R(Operador de recepción de pedidos), D(Operador de despacho de pedidos), A(Administrador del negocio)
+	tb_usuario_id integer not null,
+	constraint pk_acceso primary key(tb_acceso_id),
+	constraint fk_usuario_pedido foreign key(tb_usuario_id) references tb_usuario(tb_usuario_id),
+	constraint chk_acceso_fecini check(tb_acceso_fecini <= cast(now() as date)),
+	constraint chk_acceso_fecter check(tb_acceso_fecter <= cast(now() as date)),
+	constraint chk_acceso_fecinifecter check(tb_acceso_fecini <= tb_acceso_fecter),
+	constraint chk_acceso_rol check(tb_acceso_rol in ('R','D','A'))
 );
 
 create table tb_producto
 (
 	tb_producto_id serial not null,
-	tb_producto_cod character(2) not null,
+	tb_producto_cod character(4) not null,
 	tb_producto_nom character varying(50) not null,
 	tb_producto_preuni decimal(10,2) not null,
-	tb_producto_sto integer not null,
 	constraint pk_producto primary key(tb_producto_id),
 	constraint unq_producto_cod unique(tb_producto_cod),
 	constraint unq_producto_nom unique(tb_producto_nom),
 	constraint chk_producto_id check(tb_producto_id > 0),
-	constraint chk_producto_cod check(tb_producto_cod similar to '[0-9][0-9]'),
-	constraint chk_producto_preuni check(tb_producto_preuni > 0.00),
-	constraint chk_producto_sto check(tb_producto_sto >= 0)
+	constraint chk_producto_cod check(tb_producto_cod similar to '[0-9][0-9][0-9][0-9]'),
+	constraint chk_producto_preuni check(tb_producto_preuni > 0.00)
 );
 
-create table tb_venta
+create table tb_ciudad
 (
-	tb_venta_id serial not null,
-	tb_venta_fechor timestamp not null default now(),
-	tb_venta_tot decimal(10,2) not null,
-	tb_cliente_id integer not null,
-	constraint pk_venta primary key(tb_venta_id),
-	constraint fk_cliente_venta foreign key(tb_cliente_id) references tb_cliente(tb_cliente_id),
-	constraint chk_venta_id check(tb_venta_id > 0),
-	constraint chk_venta_fechor check(tb_venta_fechor <= now()),
-	constraint chk_venta_tot check(tb_venta_tot > 0.00)
+	tb_ciudad_id serial not null,
+	tb_ciudad_cod character(4) not null,
+	tb_ciudad_nom character varying(50) not null,
+	tb_ciudad_pretel character(2) not null,
+	constraint pk_ciudad primary key(tb_ciudad_id),
+	constraint unq_ciudad_cod unique(tb_ciudad_cod),
+	constraint unq_ciudad_nom unique(tb_ciudad_nom),
+	constraint unq_ciudad_pretel unique(tb_ciudad_pretel),
+	constraint chk_ciudad_id check(tb_ciudad_id > 0),
+	constraint chk_ciudad_cod check(tb_ciudad_cod similar to '[0-9][0-9][0-9][0-9]'),
+	constraint chk_ciudad_pretel check(tb_ciudad_pretel similar to '[0-9][0-9]')
 );
 
-create table tb_detalleventa
+create table tb_pedido
 (
-	tb_detalleventa_id serial not null,
-	tb_detalleventa_can integer not null,
-	tb_detalleventa_preuni decimal(10,2) not null,
-	tb_detalleventa_subtot decimal(10,2) not null,
-	tb_venta_id integer not null,
-	tb_producto_id integer not null,
-	constraint pk_detalleventa primary key(tb_detalleventa_id),
-	constraint fk_venta_detalleventa foreign key(tb_venta_id) references tb_venta(tb_venta_id),
-	constraint fk_producto_detalleventa foreign key(tb_producto_id) references tb_producto(tb_producto_id),
-	constraint chk_detalleventa_id check(tb_detalleventa_id > 0),
-	constraint chk_detalleventa_can check(tb_detalleventa_can > 0),
-	constraint chk_detalleventa_preuni check(tb_detalleventa_preuni > 0.00),
-	constraint chk_detalleventa_subtot check(tb_detalleventa_subtot = (tb_detalleventa_can * tb_detalleventa_preuni))
+	tb_pedido_id serial not null,
+	tb_pedido_fechor timestamp not null default now(),
+	tb_pedido_cli character varying(50) not null,
+	tb_pedido_dir character varying(50) not null,
+	tb_pedido_telfij character(6) not null,
+	tb_pedido_imp decimal(10,2) not null,
+	tb_pedido_pag decimal(10,2) not null,
+	tb_pedido_vue decimal(10,2) not null,
+	tb_pedido_est character(1) not null default 'P',
+	tb_ciudad_id integer not null,
+	tb_usuario_id integer not null,
+	constraint pk_pedido primary key(tb_pedido_id),
+	constraint fk_ciudad_pedido foreign key(tb_ciudad_id) references tb_ciudad(tb_ciudad_id),
+	constraint fk_usuario_pedido foreign key(tb_usuario_id) references tb_usuario(tb_usuario_id),
+	constraint chk_pedido_id check(tb_pedido_id > 0),
+	constraint chk_pedido_fechor check(tb_pedido_fechor <= now()),
+	constraint chk_pedido_telfij check(tb_pedido_telfij similar to '[0-9][0-9][0-9][0-9][0-9][0-9]'),
+	constraint chk_pedido_imp check(tb_pedido_imp > 0.00),
+	constraint chk_pedido_pag check(tb_pedido_pag > 0.00),
+	constraint chk_pedido_vue check(tb_pedido_vue >= 0.00),
+	constraint chk_pedido_est check(tb_pedido_est in ('P','C','D','A')) 
+	-- P: Pedido por confirmar, C: Pedido confirmado, D: Pedido despachado, A: Pedido Anulado
 );
 
-insert into tb_cliente(tb_cliente_cod,tb_cliente_nom) values('01','PAUL');
-insert into tb_cliente(tb_cliente_cod,tb_cliente_nom) values('02','ANDREA');
-insert into tb_cliente(tb_cliente_cod,tb_cliente_nom) values('03','LUIS');
-
-insert into tb_producto(tb_producto_cod,tb_producto_nom,tb_producto_preuni,tb_producto_sto) values('01','INKA KOLA',1.9,100);
-insert into tb_producto(tb_producto_cod,tb_producto_nom,tb_producto_preuni,tb_producto_sto) values('02','TRIPLE KOLA',1.2,120);
-insert into tb_producto(tb_producto_cod,tb_producto_nom,tb_producto_preuni,tb_producto_sto) values('03','COCA COLA',1.3,140);
-insert into tb_producto(tb_producto_cod,tb_producto_nom,tb_producto_preuni,tb_producto_sto) values('04','PEPSI COLA',1.6,90);
-insert into tb_producto(tb_producto_cod,tb_producto_nom,tb_producto_preuni,tb_producto_sto) values('05','CASINELLI',1.1,180);
+create table tb_detallepedido
+(
+	tb_detallepedido_id serial not null,
+	tb_detallepedido_can decimal(10,2) not null,
+	tb_detallepedido_preuni decimal(10,2) not null,
+	tb_detallepedido_subtot decimal(10,2) not null,
+	tb_pedido_id integer not null, tb_producto_id integer not null,
+	constraint pk_detallepedido primary key(tb_detallepedido_id),
+	constraint fk_pedido_detallepedido foreign key(tb_pedido_id) references tb_pedido(tb_pedido_id),
+	constraint fk_producto_detallepedido foreign key(tb_producto_id) references tb_producto(tb_producto_id),
+	constraint chk_detallepedido_id check(tb_detallepedido_id > 0),
+	constraint chk_detallepedido_can check(tb_detallepedido_can > 0.00),
+	constraint chk_detallepedido_preuni check(tb_detallepedido_preuni > 0.00),
+	constraint chk_detallepedido_subtot check(tb_detallepedido_subtot = (tb_detallepedido_can * tb_detallepedido_preuni))
+);
