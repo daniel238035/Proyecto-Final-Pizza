@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Confirmar Pedido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="Css/estilos_confirmacion.css">
+    <link href='Imagenes/logo-final.png' rel='shortcut icon' type='image/png'>
+
+  </head>
+  <body>
+    <section class="container-fluid">
+      <header>
+        <section class="logo col-xs-12  col-sm-4  col-md-5">
+            <figure class="imagen_logo">
+                <img src="Imagenes/logo-final.png">
+            </figure>
+        </section>
+        <section class="usuario col-xs-12  col-sm-8  col-md-7">
+          <h4>USUARIO: DANIEL SANCHEZ MENDEZ</h4>
+        </section>
+      </header>
+      <section class="navegacion col-xs-12 col-md-12">
+        <nav class=" barranav navbar navbar-inverse ">
+
+          <section class="naveheader navbar-header ">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navega-1"  aria-expanded="false">
+              <span class="sr-only">Menu</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </section>
+
+          <section class="navelist collapse navbar-collapse container-fluid" id="navega-1">
+            <ul class="nav navbar-nav  col-md-12 ">
+              <li class="col-sm-12 col-md-3"><a href="#"><h2>REGISTRAR PEDIDO</h2></a></li>
+              <li class="col-sm-12 col-md-3"><a href="#"><h2>CONFIRMAR PEDIDO</h2></a></li>
+              <li class="col-sm-12 col-md-3"><a href="#"><h2>DESPACHO <br>PEDIDO</h2></a></li>
+              <li class="col-sm-12 col-md-3"><a href="#"><h2>MONITOREO VENTAS</h2></a></li>
+            </ul>
+          </section>
+        </nav>
+      </section>
+
+      <section class="imagen ">
+        <figure class="imagen_principal img-responsive">
+            <img src="Imagenes/imagen-pedir-pedido.png">
+        </figure>
+      </section>
+
+      <section class="cliente-cont container col-xs-12 col-md-12">
+        <h1>DATOS DEL CLIENTE</h1>
+        <form class="form_cliente" action="" method="post">
+          <div class="form-group  col-xs-12 col-md-12">
+            <label for="nom">Nombre</label>
+            <input type="text" class="form-control"name="nombre" id="nom" placeholder="Escribe tu nombre">
+          </div>
+
+          <div class="form-group col-xs-12 col-md-6">
+            <label for="opcion">Ciudad</label>
+            <select class="form-control" name="" id="opcion">
+              <option value="Chiclayo">Chiclayo</option>
+              <option value="Trujillo">Trujillo</option>
+              <option value="Piura">Piura</option>
+              <option value="Lima">Lima</option>
+            </select>
+          </div>
+
+          <div class="form-group col-xs-12 col-md-6">
+            <label for="dir" id="lab_dir">Dirección</label>
+            <input type="text" class="form-control" name="direccion" id="dir" placeholder="Escribe tu direccion">
+          </div>
+
+          <div class="form-group col-xs-12 col-md-6">
+            <label for="tel">Teléfono</label>
+            <input type="tel" class="form-control"name="telefono" id="tel" placeholder="Escribe tu telefono">
+          </div>
+
+        </form>
+      </section>
+
+      <section class="productos-cont container col-xs-12 col-md-12">
+        <h1>NUESTROS PRODUCTOS</h1>
+        <section class="productos col-xs-12">
+          <section class="fila_productos row">
+
+            <section class="bloque col-xs-12 col-sm-6 col-md-4">
+              <figure>
+                <img src="Imagenes/pizza1.jpg" class="img-responsive" />
+              </figure>
+              <section class="nombre_pizza col-xs-12">
+                <h2>Pizza Americana</h2>
+              </section>
+              <section class="desc_pizza col-xs-12">
+                <p>
+                  !La Pizza preferida de los chicos! Jamón y queso mozzarella
+                </p>
+              </section>
+              <section class="precio_pizza col-xs-12 col-ms-12">
+                <h2>Precio:</h2>
+                <h2>S/. 35.00</h2>
+              </section>
+              <section class="cantidad col-xs-12 col-md-6" >
+                <form class="" action="index.html" method="post">
+                  <div class="">
+                    <label for="cantidad">Cant:</label>
+                    <input class="form-control" type="number" id="cantidad" name="cantidad">
+                  </div>
+                </form>
+              </section>
+              <section class="sub_total col-xs-12 col-md-6">
+                <form class="" action="index.html" method="post">
+                  <label for="subtotal">SubTotal:</label>
+                  <input class="form-control" type="number" id="subtotal" name="subtotal" readonly="">
+                </form>
+              </section>
+            </section>
+
+            <section class="bloque col-xs-12 col-sm-6 col-md-4">
+              <figure>
+                <img src="Imagenes/pizza1.jpg" class="img-responsive" />
+              </figure>
+              <section class="nombre_pizza col-xs-12 col-md-12">
+                <h2>Pizza Pepperoni</h2>
+              </section>
+              <section class="desc_pizza col-xs-12 col-md-12">
+                <p>
+                  Sabor incomparable de pepperoni americano y queso mozzarella.
+                </p>
+              </section>
+              <section class="precio_pizza col-xs-12 col-md-12">
+                <h2>Precio:</h2>
+                <h2>S/. 45.00</h2>
+              </section>
+              <section class="cantidad col-xs-12 col-md-6">
+                <form class="" action="index.html" method="post">
+                  <label for="cantidad">Cant:</label>
+                  <input type="number"  class="form-control"  id="cantidad" name="cantidad">
+                </form>
+              </section>
+              <section class="sub_total col-xs-12 col-md-6">
+                <form class="" action="index.html" method="post">
+                  <label for="subtotal">SubTotal:</label>
+                  <input type="number"  class="form-control"  id="subtotal" name="subtotal" readonly="">
+                </form>
+              </section>
+            </section>
+
+            <section class="bloque col-xs-12 col-sm-6 col-md-4">
+              <figure>
+                <img src="Imagenes/pizza1.jpg" class="img-responsive" />
+              </figure>
+              <section class="nombre_pizza col-xs-12 col-md-12">
+                <h2>Pizza Continental</h2>
+              </section>
+              <section class="desc_pizza col-xs-12 col-md-12">
+                <p>
+                  Deliciosa mixtura de jamón, champignones, cebolla blanca y queso mozzarella.
+                </p>
+              </section>
+              <section class="precio_pizza col-xs-12 col-md-12">
+                <h2>Precio:</h2>
+                <h2>S/. 45.00</h2>
+              </section>
+              <section class="cantidad col-xs-12 col-md-6">
+                <form class="" action="index.html" method="post">
+                  <label for="cantidad">Cant:</label>
+                  <input class="form-control" type="number" id="cantidad" name="cantidad">
+                </form>
+              </section>
+              <section class="sub_total col-xs-12 col-md-6">
+                <form class="" action="index.html" method="post">
+                  <label for="subtotal">SubTotal:</label>
+                  <input class="form-control" type="number" id="subtotal" name="subtotal" readonly="">
+                </form>
+              </section>
+            </section>
+
+
+          </section>
+        </section>
+      </section>
+    </section>
+
+
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

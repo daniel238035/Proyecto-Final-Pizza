@@ -3,48 +3,55 @@
   <head>
     <meta charset="utf-8"/>
     <title>Login-FastFood</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     <link href='Imagenes/logo-final.png' rel='shortcut icon' type='image/png'>
-    <link rel="stylesheet" href="Fonts/style.css" >
+    <link rel="stylesheet" href="Fonts/style.css">
     <link rel="stylesheet" href="Css/estilos_login.css">
   </head>
   <body>
-    <section class="izquierda">
-      <section class="izquierda1">
-        <h1>“10 AÑOS llevando  la</h1>
+    <section class="main">
+      <section class="izquierda ">
+        <section class="izquierda1">
+          <h1>“10 AÑOS llevando  la</h1>
+        </section>
+        <br></br>
+        <br></br>
+        <section class="izquierda2">
+          <h1>mejor pizza hasta donde estés”</h1>
+        </section>
       </section>
-      <br></br>
-      <br></br>
-      <section class="izquierda2">
-        <h1>mejor pizza hasta donde estés”</h1>
+      <section  class="derecha" class="">
+          <section class="logo">
+              <figure class="imagen_logo">
+                  <img src="Imagenes/logo-final.png">
+              </figure>
+          </section>
+          <section class="login">
+            <h1>Login</h1>
+            <form class="login-usuario" action="index.html" method="post">
+              <input type="text" name="usuario" placeholder="Usuario" maxlength="50">
+              <br></br>
+              <input type="password" name="contraseña" placeholder="Clave" maxlength="50">
+              <br></br>
+              <select class="opciones" name="tipo">
+                <option value="Administrador del sistema">Administrador del sistema</option>
+                <option value="Operador de recepción de pedido">Operador de recepción de pedido</option>
+                <option value="Operador de despacho de pedido">Operador de despacho de pedido</option>
+                <option value="Administrador del negocio">Administrador del negocio</option>
+              </select>
+              <br></br>
+              <input type="submit" value="INGRESAR">
+            </form>
+            <a href="recuperar_contraseña.html"><h3>Olvidé mi contraseña</h3></a>
+            <h4>Fast Food | CopyRight 2015 </h4>
+          </section>
       </section>
     </section>
-    <section  class="derecha">
-        <section class="logo">
-            <figure class="imagen_logo">
-                <img src="Imagenes/logo-final.png">
-            </figure>
-        </section>
-        <section class="login">
-          <h1>Login</h1>
-          <form class="login-usuario" action="index.html" method="post">
-            <input type="text" name="usuario" placeholder="Usuario" maxlength="50">
-            <br></br>
-            <input type="password" name="contraseña" placeholder="Clave" maxlength="50">
-            <br></br>
-            <select class="opciones" name="tipo">
-              <option value="Administrador del sistema">Administrador del sistema</option>
-              <option value="Operador de recepción de pedido">Operador de recepción de pedido</option>
-              <option value="Operador de despacho de pedido">Operador de despacho de pedido</option>
-              <option value="Administrador del negocio">Administrador del negocio</option>
-            </select>
-            <br></br>
-            <input type="submit" value="INGRESAR">
-          </form>
-          <a href="recuperar_contraseña.html"><h3>Olvidé mi contraseña</h3></a>
-          <h4>Fast Food | CopyRight 2015 </h4>
-        </section>
-    </section>
+
+    <script type="Bootstrap/js/jquery.js"></script>
+    <script type="Bootstrap/js/bootstrap.js"></script>
   </body>
 </htm>
