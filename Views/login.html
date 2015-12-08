@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+      <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="Css/bootstrap.css">
+      <link rel="stylesheet" href="Css/css-login.css">
+      <link href='Imagenes/logo-final.png' rel='shortcut icon' type='image/png'>
+  </head>
+  <body>
+    <section class="contenedor  container-fluid">
+      <section class="fila row">
+        <section class="columna-izq col-xs-12 col-sm-6 col-md-8">
+          <div class="contendedor-izq container col-xs-12">
+            <h2>"10 Años llevando la"</h2>
+            <br>
+            <br>
+            <h2>"mejor pizza hasta donde estes"</h2>
+          </div>
+        </section>
+        <section class="columna-der col-xs-12 col-sm-6 col-md-4">
+          <div class="contenedor-der container ">
+            <div class="logo col-xs-12">
+              <figure class="imagen_logo">
+                  <img src="Imagenes/logo-final.png" class="img-responsive">
+              </figure>
+            </div>
+            <div class="seccion-login col-xs-12">
+              <h1>Login</h1>
+              <form class="formulario form" action="index.html" method="post">
+                <div class="formulario-usuario form-group">
+                  <label class="sr-only">Usuario</label>
+                  <input type="text" class="form-control" id="usuario" placeholder="Introduce tu usuario">
+                </div>
+                <div class="formulario-contraseña form-group">
+                  <label class="sr-only" >Contraseña</label>
+                  <input type="password" class="form-control" id="contraseña"  placeholder="Contraseña">
+                </div>
+                <select class="opciones form-control input-lg" name="tipo">
+                  <option value="Administrador del sistema">Administrador del sistema</option>
+                  <option value="Operador de recepción de pedido">Operador de recepción de pedido</option>
+                  <option value="Operador de despacho de pedido">Operador de despacho de pedido</option>
+                  <option value="Administrador del negocio">Administrador del negocio</option>
+                </select>
+                <input type="submit" class="btn btn-primary btn-lg btn-block" value="INGRESA">
+              </form>
+              <div class="olvide text-center">
+                <a href="recuperar_contraseña.html"><h3>Olvidé mi contraseña</h3></a>
+              </div>
+            </div>
+            <footer class="container col-xs-12">
+              <h4 class="text-center">Fast Food | CopyRight 2015 </h4>
+            </footer>
+          </div>
+        </section>
+      </section>
+    </section>
+
+    <script type="js/jquery.js"></script>
+    <script type="js/bootstrap.js"></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+body{
+  border: 1px solid red;
+  background: url(../Imagenes/fondo_login_3.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contenedor{
+  border: 1px solid red;
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+
+}
+
+.columna-izq{
+  display: none;
+}
+
+.columna-der{
+
+}
+
+.contenedor-der{
+  border: 1px solid red;
+  background: rgba(255,255,255,0.9);
+  height: 100vh;
+
+}
+
+.logo{
+  border: 1px solid red;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.logo figure{
+  width: 80%;
+  padding-left: 10%;
+}
+
+.logo img{
+
+}
+
+.seccion-login{
+  border: 1px solid red;
+  margin: 20px 0;
+}
+
+.seccion-login h1{
+  border: 1px solid red;
+  color: #429b66;
+  font-size: 4em;
+  padding-bottom: 5px;
+}
+
+.formulario input{
+  border: 1px solid red;
+  margin: 20px 0;
+  padding: 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 1.5em;
+  background: #e9eaed;
+
+}
+
+
+
+.formulario select{
+  border: 1px solid red;
+  margin: 30px 0;
+}
+
+.formulario input:focus{
+    border: 2px solid #429b66;
+}
+
+.formulario input[type="submit"]{
+    border-radius: 6px;
+    background: #429b66;
+    color: white;
+    margin-top: 20px;
+    font-size: 2em;
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+
+  }
+
+  .formulario input[type="submit"]:hover{
+      background: #51c480;
+      cursor:pointer;
+  }
+
+  a{
+    text-decoration: none;
+    color: #DA0000;
+  }
+
+  .olvide{
+    margin: 20px 0;
+
+  }
+
+footer{
+    border: 1px solid red;
+    margin-bottom: 0px;
+  }
