@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sistema de la Empresa</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="fonts_fontello/style.css">
+    <link rel="stylesheet" href="Css/bootstrap.css">
+    <link rel="stylesheet" href="Css/css_registrar_usuario.css">
+    <link href='Imagenes/logo-final.png' rel='shortcut icon' type='image/png'>
+  </head>
+  <body>
+    <section class="contenedor-total container-fluid">
+      <header>
+        <nav class="navegacion navbar navbar-inverse navbar-fixed-top ">
+          <section class="navbar-hader">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegador1" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Fast Food</a>
+          </section>
+
+          <section class="collapse navbar-collapse" id="navegador1">
+            <ul class="navegador-izq nav navbar-nav navbar-right">
+              <li><a href="#">Daniel Sanchez Mendez</a></li>
+              <li><a href="#">Chiclayo</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="login.html">Salir</a></li>
+            </ul>
+          </section>
+        </nav>
+      </header>
+      <section class="fila row">
+        <section class="titulo col-xs-12">
+          <h3 class="text-center">REGISTRAR USUARIO</h3>
+        </section>
+        <section class="imagen col-xs-12">
+          <figure class="imagen_principal">
+              <img src="Imagenes/portada_registrar_usuario.png" class="img-responsive">
+          </figure>
+        </section>
+
+        <section class="paso1 col-xs-12">
+          <section class="formulario-cont container ">
+            <form class="form-1" action="" method="post">
+              <section class="form-group">
+                <label for="ape_pat">Apellido Paterno</label>
+                <input type="text" class="form-control "name="ape_pat" placeholder="Escribe tu apellido paterno">
+              </section>
+              <section class="form-group">
+                <label for="ape_mat">Apellido Materno</label>
+                <input type="text" class="form-control "name="ape_mat" placeholder="Escribe tu apellido materno">
+              </section>
+              <section class="form-group">
+                <label for="nom">Nombre</label>
+                <input type="text" class="form-control "name="nom" placeholder="Escribe tu nombre">
+              </section>
+              <section class="form-group">
+                <label for="correo">Correo Electronico</label>
+                <input type="email" class="form-control "name="correo" placeholder="Escribe tu correo">
+              </section>
+
+              <h2>Roles</h2>
+              <select class="roles form-control input-lg" name="tipo">
+                <option value="Administrador del sistema">Administrador del sistema</option>
+                <option value="Operador de recepción de pedido">Operador de recepción de pedido</option>
+                <option value="Operador de despacho de pedido">Operador de despacho de pedido</option>
+                <option value="Administrador del negocio">Administrador del negocio</option>
+              </select>
+              <br>
+              <br>
+              <h2>Intervalo de Permiso</h2>
+              <br>
+              <section class="row">
+                <section class="form-group col-xs-12 col-md-6">
+                    <label for="tiempo1">Desde</label>
+                    <input type="date" class="form-control input-lg" name="tiempo1" >
+                </section>
+                <section class="form-group col-xs-12 col-md-6">
+                  <label for="tiempo2">Hasta</label>
+                  <input type="date" class="form-control input-lg" name="tiempo2" >
+                </section>
+              </section>
+              <input type="submit" class="form-control input-lg " name="generar_usuario" value="GENERAR USUARIO">
+            </form>
+
+          </section>
+        </section>
+      </section>
+      <footer class="container-fluid">
+        <div class="container text-center">
+          <span class="icon-facebook2"></span>
+          <span class="icon-twitter2"></span>
+          <h4 class="">Fast Food | CopyRight 2015 </h4>
+          <span class="icon-youtube"></span>
+          <span class="icon-github3"></span>
+        </div>
+      </footer>
+
+    </section>
+
+
+    <!-- JQUERY AND SCRIP bootstrap-->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

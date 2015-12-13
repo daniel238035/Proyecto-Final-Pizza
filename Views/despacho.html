@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Despacho Pedido</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="fonts_fontello/style.css" >
+    <link rel="stylesheet" href="Css/bootstrap.css">
+    <link rel="stylesheet" href="Css/css_confirmar.css">
+    <link href='Imagenes/logo-final.png' rel='shortcut icon' type='image/png'>
+  </head>
+  <body>
+    <section class="contenedor-total container-fluid">
+      <header>
+        <nav class="navegacion navbar navbar-inverse navbar-fixed-top ">
+          <section class="navbar-hader">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegador1" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">Fast Food</a>
+          </section>
+
+          <section class="collapse navbar-collapse" id="navegador1">
+            <ul class="navegador-izq nav navbar-nav navbar-right">
+              <li><a href="#">Daniel Sanchez Mendez</a></li>
+              <li><a href="#">Chiclayo</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="login.html">Salir</a></li>
+            </ul>
+          </section>
+        </nav>
+      </header>
+      <section class="fila row">
+        <section class="imagen col-xs-12">
+          <figure class="imagen_principal">
+              <img src="Imagenes/portada_despacho.png" class="img-responsive">
+          </figure>
+        </section>
+        <section class="navegador2 col-xs-12 col-sm-12">
+          <nav class="navegacion2_sub navbar navbar-inverse">
+            <section class="navbar-hader">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegador2" aria-expanded="false">
+                  <span class="sr-only">Menu</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </section>
+
+            <section class=" collapse navbar-collapse " id="navegador2">
+              <ul class=" row navegador-acciones nav  nav-justified">
+                <li class="col-sm-3 col-md-3 disabled"><a class="text-center" href="#">REGISTRAR PEDIDO</a></li>
+                <li class="col-sm-3 col-md-3 disabled"><a class="text-center" href="#">CONFIRMAR PEDIDO</a></li>
+                <li class="col-sm-3 col-md-3"><a class="text-center" href="#">DESPACHO PEDIDO</a></li>
+                <li class="col-sm-3 col-md-3 disabled"><a class="text-center" href="#">MONITOREO VENTAS</a></li>
+              </ul>
+            </section>
+          </nav>
+        </section>
+        <section class="seccion1 col-xs-12">
+          <div class="container">
+            <h1>PEDIDOS RECEPCIONADOS</h1>
+            <section class="botones-opciones container-fluid">
+              <div class="btn-group btn-group-justified" role="group" aria-label="...">
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-success"><span class="icon-clipboard"></span>DESPACHAR</button>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-danger"><span class="icon-checkmark"></span>CONFIRMAR</button>
+                </div>
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-warning"><span class="icon-printer"></span>IMPRIMIR</button>
+                </div>
+              </div>
+            </section>
+            <section class="tabla-cont container-fluid">
+              <div class="panel panel-default">
+                <div class="table-responsive">
+                  <table class="table  table-bordered table-hover table-condensed">
+                    <tr class="active">
+                      <th>Selec</th>
+                      <th>Fecha y Hora</th>
+                      <th>Cliente</th>
+                      <th>Dirección</th>
+                      <th>Telefono</th>
+                      <th>Importe</th>
+                      <th>Pago</th>
+                      <th>Estado</th>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" id="blankCheckbox" value="option1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>28/11/15 15:30</td>
+                      <td>Daniel Sanchez Mendez</td>
+                      <td>Av Bolognesi 1129</td>
+                      <td>047238035</td>
+                      <td>50.00</td>
+                      <td>60.00</td>
+                      <td>
+                        <button type="button" name="button" class="btn-success">Confirmado</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" id="blankCheckbox" value="option1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>28/11/15 15:30</td>
+                      <td>Daniel Sanchez Mendez</td>
+                      <td>Av Bolognesi 1129</td>
+                      <td>047238035</td>
+                      <td>50.00</td>
+                      <td>60.00</td>
+                      <td>
+                        <button type="button" name="button" class="btn-success">Confirmado</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" id="blankCheckbox" value="option1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>28/11/15 15:30</td>
+                      <td>Daniel Sanchez Mendez</td>
+                      <td>Av Bolognesi 1129</td>
+                      <td>047238035</td>
+                      <td>50.00</td>
+                      <td>60.00</td>
+                      <td>
+                        <button type="button" name="button" class="btn-success">Confirmado</button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" id="blankCheckbox" value="option1">
+                          </label>
+                        </div>
+                      </td>
+                      <td>28/11/15 15:30</td>
+                      <td>Daniel Sanchez Mendez</td>
+                      <td>Av Bolognesi 1129</td>
+                      <td>047238035</td>
+                      <td>50.00</td>
+                      <td>60.00</td>
+                      <td><button type="button" name="button" class="btn-danger">Cancelado</button></td>
+                    </tr>
+                </table>
+                </div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+
+      </section>
+
+      <footer class="container-fluid">
+        <div class="container text-center">
+          <span class="icon-facebook2"></span>
+          <span class="icon-twitter2"></span>
+          <h4 class="">Fast Food | CopyRight 2015 </h4>
+          <span class="icon-youtube"></span>
+          <span class="icon-github3"></span>
+        </div>
+      </footer>
+    </section>
+
+
+    <!-- JQUERY AND SCRIP bootstrap -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
